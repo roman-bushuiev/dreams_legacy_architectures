@@ -9,7 +9,7 @@ from torch import nn
 import random
 import igraph
 import scipy
-import spectral_entropy
+# import spectral_entropy
 import plotly.graph_objects as go
 import torch.nn.functional as F
 import pytorch_lightning as pl
@@ -68,6 +68,7 @@ class SpectrumPreprocessor:
 
         # Clean spectrum as in spectral entropy paper
         if self.spec_entropy_cleaning:
+            raise NotImplementedError("Spectral entropy was removed as a dependency from the project.")
             spec = spectral_entropy.tools.clean_spectrum(spec)
 
         # Trim and pad peak list
